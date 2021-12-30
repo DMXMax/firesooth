@@ -1,4 +1,4 @@
-module firestorefun
+module fsquery
 
 go 1.17
 

@@ -17,14 +17,12 @@ var (
 
 	// rootCmd represents the base command when called without any subcommands
 	rootCmd = &cobra.Command{
-		Use:   "firestorefun",
-		Short: "A brief description of your application",
-		Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+		Use:   "fsquery",
+		Short: "a useful firestore command utility",
+		Long: `
+a collection of utilities to display firestore db information -- this is especially useful for the 
+emulator, which, at this time, doesn't have a console.
+`,
 		// Uncomment the following line if your bare application
 		// has an action associated with it:
 		// Run: func(cmd *cobra.Command, args []string) { },

@@ -20,14 +20,13 @@ var (
 	docPath string
 
 	fillCmd = &cobra.Command{
-		Use:   "addDoc",
-		Short: "A brief description of your command",
-		Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+		Use:   "create",
+		Short: "create a firestore document",
+		Long: `
+Provide a path to a Document, and a json object. 
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+EXAMPLE: fsquery --docpath users/user1 "{\"id\":\"0001\", \"name\":{\"first\":\"Ada\", \"last\":\"Lovelace\"}}"
+`,
 		Run: func(cmd *cobra.Command, args []string) {
 			log.Trace().Interface("args", args).Send()
 			fmt.Println("addDoc called", viper.GetString("docPath"))
@@ -39,13 +38,13 @@ to quickly create a Cobra application.`,
 				log.Err(err).Send()
 			}
 			defer client.Close()
-			if len(args) <  1{
+			if len(args) < 1 {
 				log.Err(errors.New("Not enough Args"))
 				return
 			}
 			data := make(map[string]interface{})
 			err = json.Unmarshal([]byte(args[0]), &data)
-			if err != nil{
+			if err != nil {
 				log.Err(err).Send()
 				return
 			}

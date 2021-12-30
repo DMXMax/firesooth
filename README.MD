@@ -16,8 +16,8 @@
 
 if FIRESTORE_EMULATOR_HOST is set, the clients connect to the emulator host, regardless of project name.  
 
-So far, so good.
-
-We can add documents.
-```Tree``` shows the collection tree. Maybe we make it so we can add a root path.
-
+## Commands
+```list``` shows the collection tree. Maybe we make it so we can add a root path.
+```create``` creates a document. The document is provided as an argument and must be valid json
+```update``` TBD
+```delete``` TBD
