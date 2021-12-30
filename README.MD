@@ -9,9 +9,8 @@
 
 ### Config File
 
-* Located in home directory. Currently named ".config"
-* Right now, it only holds the project name, which doesn't matter with an emulator, but will matter when talking to firestore
-
+* Located in home directory. Currently named ".cobra"
+* Holds Project Name (ignored when using the emulator) and the entity limit (prevents the client from retrieving everything)
 ### Connecting to cloud firestore
 
 if FIRESTORE_EMULATOR_HOST is set, the clients connect to the emulator host, regardless of project name.  
